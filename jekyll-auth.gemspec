@@ -7,13 +7,13 @@ Gem::Specification.new do |s|
   s.version               = JekyllAuth::VERSION
   s.summary               = 'A simple way to use GitHub OAuth to serve a protected jekyll site to your GitHub organization'
   s.description           = 'A simple way to use GitHub OAuth to serve a protected jekyll site to your GitHub organization.'
-  s.authors               = 'Ben Balter'
-  s.email                 = 'ben@balter.com'
+  s.authors               = ['Ben Balter', 'BigCommerce Engineering']
+  s.email                 = %w[ben@balter.com engineering@bigcommerce.com]
   s.homepage              = 'https://github.com/benbalter/jekyll-auth'
   s.license               = 'MIT'
   s.files                 = `git ls-files`.split('\n')
   s.test_files            = `git ls-files -- {test,spec,features}/*`.split('\n')
-  s.executables           = `git ls-files -- bin/*`.split('\n').map { |f| File.basename(f) }
+  s.executables << 'jekyll-auth'
   s.require_paths         = ['lib']
 
   s.add_dependency 'activesupport', '>= 5', '< 7'
