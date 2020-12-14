@@ -11,10 +11,13 @@ Gem::Specification.new do |s|
   s.email                 = %w[ben@balter.com engineering@bigcommerce.com]
   s.homepage              = 'https://github.com/benbalter/jekyll-auth'
   s.license               = 'MIT'
-  s.files                 = `git ls-files`.split('\n')
-  s.test_files            = `git ls-files -- {test,spec,features}/*`.split('\n')
+
+  s.files                 = Dir['docs/**/*', 'lib/**/*', 'templates/**/*', 'script/**/*', 'jekyll-auth.gemspec']
+  s.test_files            = Dir['spec/**/*']
   s.executables << 'jekyll-auth'
   s.require_paths         = ['lib']
+
+  s.required_ruby_version = '~> 2.4'
 
   s.add_dependency 'activesupport', '>= 5', '< 7'
   s.add_dependency 'colorator', '~> 1.0'
