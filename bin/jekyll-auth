@@ -76,7 +76,6 @@ Mercenary.program("jekyll-auth") do |p|
     c.description "Run Jekyll Auth site locally"
     c.option "host", "--host <HOST>", "Listen at the given hostname, e.g., 127.0.0.1"
     c.option "port", "--port <PORT>", "Listen on the given port, e.g., 4000"
-    c.option "no-build", "--no-build", "Do not build at startup"
 
     c.action do |_args, options|
       # Ensure environmental variables are set
@@ -88,7 +87,7 @@ Mercenary.program("jekyll-auth") do |p|
       end
 
       # build site
-      p.go ["build"] unless options['no-build']
+      p.go ["build"]
 
       host = options["host"] || "0.0.0.0"
       port = options["port"] || "4000"
